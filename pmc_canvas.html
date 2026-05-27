@@ -1,0 +1,212 @@
+<!doctype html>
+<!--
+  ========================================================================
+  Aplicativo Interativo do Project Model Canvas (PMC)
+  Exibe um grid responsivo representando a metodologia PMC.
+  ========================================================================
+-->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Model Canvas Interativo</title>
+    <!-- Bibliotecas externas para geração do PDF (html2canvas e jsPDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="pmc_canvas.css" />
+  </head>
+  <body>
+    <h1>Project Model Canvas</h1>
+    <p class="credits">
+      <strong
+        >Desenvolvido por IA baseado no conteúdo da Metodologia PMC do
+        Professor</strong
+      >
+      <a
+        href="http://pmcanvas.com.br/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >José Finocchio Junior</a
+      >
+    </p>
+
+    <!-- Área principal que será renderizada e capturada para exportação em PDF -->
+    <div id="canvas-capture-area">
+      <!-- Cabeçalho Acadêmico: Informações gerais da equipe e do projeto -->
+      <div class="academic-header">
+        <div class="header-field">
+          <label for="integrantes">Integrantes da Equipe</label>
+          <textarea
+            id="integrantes"
+            rows="1"
+            placeholder="Nome dos alunos (expande automaticamente se houver muitos integrantes)..."
+          ></textarea>
+        </div>
+        <div class="header-field">
+          <label for="disciplina">Disciplina / Curso</label>
+          <input
+            type="text"
+            id="disciplina"
+            placeholder="Ex: Gestão de Projetos..."
+          />
+        </div>
+        <div class="header-field">
+          <label for="data-projeto">Data</label>
+          <input type="date" id="data-projeto" />
+        </div>
+      </div>
+
+      <!-- Container do Grid Mapeado do Project Model Canvas (PMC) -->
+      <div class="canvas-container">
+        <div class="pitch-header">
+          <label for="pitch">PITCH:</label>
+          <input
+            type="text"
+            id="pitch"
+            placeholder="Qual é o pitch do projeto?"
+          />
+        </div>
+
+        <div class="canvas-block block-justificativas">
+          <div class="block-title">
+            Justificativas <span class="category">Por Quê?</span>
+          </div>
+          <textarea
+            id="justificativas"
+            placeholder="- Passado&#10;- Problemas&#10;- Oportunidades"
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-obj-smart">
+          <div class="block-title">
+            Obj. SMART <span class="category">Por Quê?</span>
+          </div>
+          <textarea
+            id="obj_smart"
+            placeholder="Específico, Mensurável, Atingível, Relevante e Temporal..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-beneficios">
+          <div class="block-title">
+            Benefícios <span class="category">Por Quê?</span>
+          </div>
+          <textarea
+            id="beneficios"
+            placeholder="- Futuro&#10;- Valor gerado&#10;- ROI"
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-produto">
+          <div class="block-title">
+            Produto <span class="category">O Quê?</span>
+          </div>
+          <textarea
+            id="produto"
+            placeholder="O que será gerado pelo projeto..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-requisitos">
+          <div class="block-title">
+            Requisitos <span class="category">O Quê?</span>
+          </div>
+          <textarea
+            id="requisitos"
+            placeholder="Necessidades e qualidades do produto..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-stakeholders">
+          <div class="block-title">
+            Stakeholders <span class="category">Quem?</span>
+          </div>
+          <textarea
+            id="stakeholders"
+            placeholder="- Fatores Externos&#10;- Clientes&#10;- Afetados"
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-equipe">
+          <div class="block-title">
+            Equipe <span class="category">Quem?</span>
+          </div>
+          <textarea
+            id="equipe"
+            placeholder="Gerente de Projetos (GP) e Time..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-premissas">
+          <div class="block-title">
+            Premissas <span class="category">Como?</span>
+          </div>
+          <textarea
+            id="premissas"
+            placeholder="Suposições dadas como certas..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-entregas">
+          <div class="block-title">
+            Grupo de Entregas <span class="category">Como?</span>
+          </div>
+          <textarea
+            id="entregas"
+            placeholder="Componentes/Módulos do escopo..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-restricoes">
+          <div class="block-title">
+            Restrições <span class="category">Como?</span>
+          </div>
+          <textarea
+            id="restricoes"
+            placeholder="Limitações de tempo, custo, escopo..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-riscos">
+          <div class="block-title">
+            Riscos <span class="category">Como?</span>
+          </div>
+          <textarea
+            id="riscos"
+            placeholder="Incertezas/Ameaças Externas..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-linha-tempo">
+          <div class="block-title">
+            Linha do Tempo <span class="category">Quando?</span>
+          </div>
+          <textarea
+            id="linha_tempo"
+            placeholder="Marcos do projeto / Cronograma macro..."
+          ></textarea>
+        </div>
+
+        <div class="canvas-block block-custos">
+          <div class="block-title">
+            Custos <span class="category">Quanto? $$</span>
+          </div>
+          <textarea
+            id="custos"
+            placeholder="Orçamento estimado / Investimento..."
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área de ações e controles -->
+    <div class="actions">
+      <button class="btn" onclick="baixarCanvasPDF()">
+        Baixar Canvas em PDF
+      </button>
+    </div>
+
+    <!-- Importação do script contendo a lógica de inicialização e exportação -->
+    <script src="pmc_canvas.js"></script>
+  </body>
+</html>
