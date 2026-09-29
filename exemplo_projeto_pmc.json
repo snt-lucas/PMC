@@ -1,0 +1,19 @@
+{
+  "integrantes": "Lucas Silva (Gerente), Ana Souza (UX/UI), Carlos Pereira (Tech Lead)",
+  "disciplina": "Gestão de Projetos Ágeis & Inovação",
+  "data-projeto": "2026-09-29",
+  "pitch": "Plataforma Web para Automação e Gestão Visual de Modelos Canvas de Projetos",
+  "justificativas": "- Dificuldade de colaboração remota no preenchimento do Canvas tradicional.\n- Perda de anotações físicas e post-its em dinâmicas presenciais.\n- Necessidade de exportar relatórios padronizados em PDF de alta qualidade para apresentação.",
+  "obj_smart": "- Desenvolver e disponibilizar a aplicação 100% funcional no navegador até o final do mês.\n- Reduzir em 40% o tempo médio de elaboração do plano inicial do projeto.\n- Atingir 95% de aprovação nos testes de usabilidade e portabilidade.",
+  "beneficios": "- Centralização das informações estratégicas do projeto em visualização única.\n- Agilidade no compartilhamento e realização de backups locais sem necessidade de login.\n- Geração de documento PDF profissional pronto para impressão.",
+  "produto": "Aplicação web client-side responsiva com interface baseada na metodologia Project Model Canvas (PMC), dotada de auto-ajuste de texto, autosave contínuo, importação/exportação JSON e geração de PDF de alta fidelidade.",
+  "requisitos": "- Funcionar sem necessidade de servidor ou banco de dados externo.\n- Compatibilidade total com navegadores modernos (Chrome, Firefox, Edge, Safari).\n- Ajuste automático da altura dos campos conforme digitação.\n- Capacidade de exportação e restauração completa de dados via JSON.",
+  "stakeholders": "- Gerentes de Projetos, Scrum Masters e Agile Coaches.\n- Professores e Estudantes de Gestão, TI e Engenharias.\n- Clientes e Patrocinadores (Sponsors) dos projetos.\n- Equipes de desenvolvimento e design.",
+  "equipe": "- 1 Gerente de Projeto / Product Owner\n- 1 Designer de Interface / UX\n- 2 Desenvolvedores Front-end (HTML5 / CSS3 / JavaScript)\n- 1 Analista de Qualidade e Testes (QA)",
+  "premissas": "- Os usuários possuem acesso a um navegador moderno com suporte a HTML5 Canvas e LocalStorage.\n- A metodologia PMC de referência é a criada pelo Professor José Finocchio Júnior.\n- Os dados confidenciais do usuário permanecem exclusivamente sob controle local em sua máquina.",
+  "entregas": "- Layout do Canvas em CSS Grid com cabeçalho de metadados e rodapé de ações.\n- Módulo de persistência automática (LocalStorage).\n- Módulo de exportação de PDF de alta resolução com html2canvas e jsPDF.\n- Mecanismo de backup e restauração com validação de formato JSON.",
+  "restricoes": "- Custo de infraestrutura zero (utilização de ferramentas livres e GitHub Pages).\n- Prazo de entrega de 6 semanas.\n- Código executado estritamente no cliente, sem requisições de telemetria ou cookies de terceiros.",
+  "riscos": "- Incompatibilidade na renderização de canvas em navegadores antigos (mitigado por polyfills).\n- Limpeza acidental de dados locais pelo usuário (mitigado pelo recurso de backup JSON).\n- Variação de fontes do sistema durante a geração do PDF.",
+  "linha_tempo": "- Semana 1: Definição conceitual, wireframes e estrutura semântica.\n- Semana 2: Grid responsivo, estilização e temas visuais.\n- Semana 3: Interatividade, auto-ajuste e autosave no navegador.\n- Semana 4: Integração de geração e download de PDF.\n- Semana 5: Implementação de exportação/importação JSON e testes de carga.\n- Semana 6: Revisão de acessibilidade, documentação e publicação no GitHub Pages.",
+  "custos": "- Hospedagem e controle de versão (GitHub Pages): R$ 0,00\n- Bibliotecas open-source (jsPDF, html2canvas): R$ 0,00\n- Horas técnicas de desenvolvimento da equipe: 120 horas\n- Investimento financeiro direto total: R$ 0,00"
+}

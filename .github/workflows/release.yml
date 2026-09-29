@@ -1,0 +1,66 @@
+name: Gerar Release do PMC Web
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag de versão (ex: v1.0.0)'
+        required: true
+        default: 'v1.0.0'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Definir versão
+        id: get_version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "VERSION=${{ github.event.inputs.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Preparar arquivos empacotados
+        run: |
+          mkdir -p dist
+          # Copia os arquivos essenciais
+          cp pmc_canvas.html dist/
+          cp pmc_canvas.css dist/
+          cp pmc_canvas.js dist/
+          cp README.md dist/
+          # Adiciona uma cópia como index.html para facilitar abertura direta e hospedagem estática
+          cp pmc_canvas.html dist/index.html
+
+          # Cria o arquivo compactado
+          cd dist
+          zip -r ../pmc-canvas-web-${{ steps.get_version.outputs.VERSION }}.zip ./*
+          cd ..
+
+      - name: Criar Release no GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          name: "Project Model Canvas Web - ${{ steps.get_version.outputs.VERSION }}"
+          body: |
+            ## 📦 Release do Project Model Canvas Web (${{ steps.get_version.outputs.VERSION }})
+
+            Esta versão empacotada contém todos os arquivos necessários para executar a aplicação localmente no seu computador ou hospedá-la em qualquer servidor web estático.
+
+            ### 🚀 Como usar:
+            1. Baixe o arquivo `.zip` abaixo (`pmc-canvas-web-${{ steps.get_version.outputs.VERSION }}.zip`).
+            2. Extraia o conteúdo em uma pasta.
+            3. Dê um duplo clique no arquivo `index.html` (ou `pmc_canvas.html`) para abrir diretamente no seu navegador.
+          files: pmc-canvas-web-${{ steps.get_version.outputs.VERSION }}.zip
+          draft: false
+          prerelease: false

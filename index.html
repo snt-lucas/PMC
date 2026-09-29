@@ -11,15 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Model Canvas Interativo</title>
     <!-- Bibliotecas externas para geração do PDF (html2canvas e jsPDF) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="pmc_canvas.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <h1>Project Model Canvas</h1>
     <p class="credits">
       <strong
-        >Desenvolvido por IA baseado no conteúdo da Metodologia PMC do
+        >Desenvolvido com IA baseado no conteúdo da Metodologia PMC do
         Professor</strong
       >
       <a
@@ -200,13 +200,27 @@
     </div>
 
     <!-- Área de ações e controles -->
-    <div class="actions">
-      <button class="btn" onclick="baixarCanvasPDF()">
-        Baixar Canvas em PDF
+    <div class="actions no-print">
+      <button id="btn-baixar-pdf" class="btn btn-primary">
+        📄 Baixar Canvas em PDF
+      </button>
+      <button id="btn-exportar-json" class="btn btn-secondary">
+        💾 Exportar Backup (JSON)
+      </button>
+      <label for="input-importar-json" class="btn btn-secondary btn-file-label">
+        📂 Carregar Backup (JSON)
+      </label>
+      <input type="file" id="input-importar-json" accept=".json" style="display: none;" />
+      <button id="btn-limpar" class="btn btn-danger">
+        🗑️ Limpar Campos
       </button>
     </div>
 
+    <div id="status-autosave" class="status-autosave no-print" aria-live="polite">
+      ✓ Conteúdo salvo automaticamente no seu navegador
+    </div>
+
     <!-- Importação do script contendo a lógica de inicialização e exportação -->
-    <script src="pmc_canvas.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
