@@ -35,12 +35,13 @@ jobs:
         run: |
           mkdir -p dist
           # Copia os arquivos essenciais
-          cp pmc_canvas.html dist/
-          cp pmc_canvas.css dist/
-          cp pmc_canvas.js dist/
+          cp index.html dist/
+          cp index.css dist/
+          cp index.js dist/
           cp README.md dist/
-          # Adiciona uma cópia como index.html para facilitar abertura direta e hospedagem estática
-          cp pmc_canvas.html dist/index.html
+          if [ -f exemplo_projeto_pmc.json ]; then
+            cp exemplo_projeto_pmc.json dist/
+          fi
 
           # Cria o arquivo compactado
           cd dist
@@ -60,7 +61,8 @@ jobs:
             ### 🚀 Como usar:
             1. Baixe o arquivo `.zip` abaixo (`pmc-canvas-web-${{ steps.get_version.outputs.VERSION }}.zip`).
             2. Extraia o conteúdo em uma pasta.
-            3. Dê um duplo clique no arquivo `index.html` (ou `pmc_canvas.html`) para abrir diretamente no seu navegador.
+            3. Dê um duplo clique no arquivo `index.html` para abrir diretamente no seu navegador.
+            4. (Opcional) Utilize o arquivo `exemplo_projeto_pmc.json` para testar a função de carregar backup.
           files: pmc-canvas-web-${{ steps.get_version.outputs.VERSION }}.zip
           draft: false
           prerelease: false
