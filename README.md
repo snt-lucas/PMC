@@ -42,7 +42,7 @@ Você pode utilizar a aplicação de duas formas super fáceis:
 
 ### Opção 1: Diretamente pelo Navegador (Online via GitHub Pages)
 Se você não deseja baixar nada, basta acessar a versão hospedada no **GitHub Pages**:
-👉 **[Acessar o Project Model Canvas Online](https://github.com/snt-lucas/PMC/deployments/github-pages)** *(ou pelo link na descrição do repositório)*
+👉 **[Acessar o Modelo de Edição Online](https://snt-lucas.github.io/PMC/)** *(ou pelo link na descrição do repositório)*
 
 ### Opção 2: Executando Localmente no seu Computador (Offline)
 Não precisa de Node.js, banco de dados ou servidor:
