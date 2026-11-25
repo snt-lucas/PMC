@@ -1,6 +1,10 @@
 /**
  * ========================================================================
  * Aplicativo Interativo do Project Model Canvas (PMC)
+ * Copyright (c) 2026 Lucas Lima
+ * Licença: MIT (veja o arquivo LICENSE para detalhes)
+ * Metodologia: Prof. José Finocchio Junior (pmcanvas.com.br)
+ *
  * Funcionalidades:
  * - Auto-ajuste de altura para áreas de texto
  * - Salvamento automático contínuo em localStorage

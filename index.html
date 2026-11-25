@@ -2,13 +2,18 @@
 <!--
   ========================================================================
   Aplicativo Interativo do Project Model Canvas (PMC)
-  Exibe um grid responsivo representando a metodologia PMC.
+  Copyright (c) 2026 Lucas Lima
+  Licenciado sob a Licença MIT (veja o arquivo LICENSE).
+  Metodologia PMC concebida pelo Prof. José Finocchio Junior (pmcanvas.com.br).
   ========================================================================
 -->
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Lucas Lima" />
+    <meta name="copyright" content="Lucas Lima" />
+    <meta name="license" content="MIT" />
     <title>Project Model Canvas Interativo</title>
     <!-- Bibliotecas externas para geração do PDF (html2canvas e jsPDF) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -197,6 +202,16 @@
           ></textarea>
         </div>
       </div>
+
+      <!-- Rodapé do Canvas (incluído na exportação em PDF e impressão) -->
+      <div class="canvas-footer">
+        <span class="methodology-credit">
+          Metodologia <strong>Project Model Canvas (PMC)</strong> por Prof. José Finocchio Junior (<a href="http://pmcanvas.com.br/" target="_blank" rel="noopener noreferrer">pmcanvas.com.br</a>)
+        </span>
+        <span class="software-credit">
+          Software sob <a href="LICENSE" target="_blank" rel="noopener noreferrer">Licença MIT</a> &copy; 2026 Lucas Lima
+        </span>
+      </div>
     </div>
 
     <!-- Área de ações e controles -->
@@ -219,6 +234,17 @@
     <div id="status-autosave" class="status-autosave no-print" aria-live="polite">
       ✓ Conteúdo salvo automaticamente no seu navegador
     </div>
+
+    <!-- Rodapé da Aplicação Web: Direitos Autorais e Licença de Uso -->
+    <footer class="app-footer no-print">
+      <p>
+        <strong>Project Model Canvas Interativo</strong> &bull; &copy; 2026 Lucas Lima.
+        Disponibilizado sob a <a href="LICENSE" target="_blank" rel="noopener noreferrer">Licença MIT</a>.
+      </p>
+      <p>
+        Metodologia original criada pelo <strong>Prof. José Finocchio Junior</strong> (<a href="http://pmcanvas.com.br/" target="_blank" rel="noopener noreferrer">pmcanvas.com.br</a>).
+      </p>
+    </footer>
 
     <!-- Importação do script contendo a lógica de inicialização e exportação -->
     <script src="index.js"></script>
