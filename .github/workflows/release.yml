@@ -39,6 +39,7 @@ jobs:
           cp index.css dist/
           cp index.js dist/
           cp README.md dist/
+          cp LICENSE dist/
           if [ -f exemplo_projeto_pmc.json ]; then
             cp exemplo_projeto_pmc.json dist/
           fi
