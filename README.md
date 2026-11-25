@@ -92,6 +92,7 @@ Este projeto envolve direitos de propriedade intelectual da metodologia e licen�
 - Este aplicativo web foi implementado e é mantido por **Lucas Lima**.
 - O código-fonte deste projeto é distribuído como software livre sob a **[Licença MIT](LICENSE)**.
 - Você tem liberdade para utilizar, modificar, estudar, integrar e distribuir este software, gratuitamente, sob os termos e condições da referida licença (mantendo o aviso de copyright e a isenção de garantia).
+- Para compreender de forma simples e resumida todas as permissões, condições e limitações da licença, sugerimos a leitura explicativa em **[Choose a License - MIT License](https://choosealicense.com/licenses/mit/)**.
 
 ---
 
