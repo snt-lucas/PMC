@@ -79,4 +79,20 @@ Não precisa de Node.js, banco de dados ou servidor:
 
 ---
 
+## ⚖️ Direitos Autorais e Licença de Uso
+
+Este projeto envolve direitos de propriedade intelectual da metodologia e licença livre de software:
+
+### 1. Metodologia Original
+- O **Project Model Canvas (PMC)** é uma metodologia de planejamento visual concebida e registrada pelo **Professor José Finocchio Junior**.
+- Todos os direitos sobre a metodologia, estrutura conceitual dos blocos e lógica de negócio pertencem ao seu autor.
+- Para conhecer a obra completa, livros e materiais oficiais, visite o site oficial: [pmcanvas.com.br](http://pmcanvas.com.br/).
+
+### 2. Software e Código-Fonte
+- Este aplicativo web foi implementado e é mantido por **Lucas Lima**.
+- O código-fonte deste projeto é distribuído como software livre sob a **[Licença MIT](LICENSE)**.
+- Você tem liberdade para utilizar, modificar, estudar, integrar e distribuir este software, gratuitamente, sob os termos e condições da referida licença (mantendo o aviso de copyright e a isenção de garantia).
+
+---
+
 Feito com carinho para estudantes, gerentes de projetos, professores e entusiastas da gestão ágil e visual! Se gostar, deixe uma ⭐ no repositório!
